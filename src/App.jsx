@@ -1,6 +1,5 @@
 import { About } from "./Componants/About";
 import Contact from "./Componants/Contact";
-import Experience from "./Componants/Experience";
 import Hero from "./Componants/Hero";
 import Navbar from "./Componants/Navbar";
 import Projects from "./Componants/Projects";
@@ -17,7 +16,6 @@ export default function App() {
         <Hero />
         <About/>
         <Technologies/>
-        <Experience/>
         <Projects/>
         <Contact/>
       </div>

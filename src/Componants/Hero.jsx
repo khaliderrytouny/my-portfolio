@@ -1,4 +1,4 @@
-import profile from '../assets/img/1.jpg';
+import profile from '../assets/img/1.png';
 import { motion } from 'framer-motion';
 
 const containerVariants = {
