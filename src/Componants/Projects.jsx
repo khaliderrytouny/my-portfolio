@@ -1,5 +1,6 @@
 import { PROJECTS } from '../constants';
 import { motion } from 'framer-motion';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'; 
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -59,7 +60,7 @@ const Projects = () => {
         {PROJECTS.map((project, i) => (
           <motion.div
             key={i}
-            className='mb-8 flex flex-wrap lg:justify-center'
+            className="mb-8 flex flex-wrap lg:justify-center"
             variants={itemVariants}
           >
             <motion.div
@@ -71,26 +72,48 @@ const Projects = () => {
                 width={250}
                 height={250}
                 alt={project.title}
-                className='mb-6 rounded'
+                className="mb-6 rounded"
               />
             </motion.div>
             <motion.div className="w-full max-w-xl lg:w-3/4" variants={textVariants}>
-              <motion.h6 className='mb-2 font-semibold' variants={textVariants}>
+              <motion.h6 className="mb-2 font-semibold" variants={textVariants}>
                 {project.title}
               </motion.h6>
-              <motion.p className='mb-4 text-neutral-400' variants={textVariants}>
+              <motion.p className="mb-4 text-neutral-400" variants={textVariants}>
                 {project.description}
               </motion.p>
-              <motion.div className='flex flex-wrap'>
+              <motion.div className="flex flex-wrap">
                 {project.technologies.map((t, i) => (
                   <motion.span
                     key={i}
-                    className='mr-2 mt-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-violet-500'
+                    className="mr-2 mt-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-violet-500"
                     variants={textVariants}
                   >
                     {t}
                   </motion.span>
                 ))}
+              </motion.div>
+              <motion.div className="mt-4 flex space-x-4" variants={textVariants}>
+                {project.links?.github && (
+                  <a
+                    href={project.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-neutral-400 hover:text-violet-500 transition"
+                  >
+                    <FaGithub size={20} />
+                  </a>
+                )}
+                {project.links?.view && (
+                  <a
+                    href={project.links.view}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-neutral-400 hover:text-violet-500 transition"
+                  >
+                    <FaExternalLinkAlt size={20} />
+                  </a>
+                )}
               </motion.div>
             </motion.div>
           </motion.div>
@@ -98,6 +121,6 @@ const Projects = () => {
       </div>
     </motion.div>
   );
-}
+};
 
 export default Projects;

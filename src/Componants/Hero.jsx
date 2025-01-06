@@ -1,5 +1,6 @@
 import profile from '../assets/img/1.png';
 import { motion } from 'framer-motion';
+import pdf from '../assets/img/KHALID-ERRYTOUNY.pdf'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -57,7 +58,27 @@ export default function Hero() {
             <img src={profile} alt="profile" className="w-full h-full object-cover" />
           </div>
         </motion.div>
+        <motion.div
+  className="cursor-pointer bg-white text-gray-700 border border-gray-300 hover:bg-gray-100 hover:text-gray-900 px-4 py-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+  initial={{ opacity: 0, y: -20 }} 
+  animate={{ opacity: 1, y: 0 }}  
+  transition={{ duration: 0.5 }} 
+>
+  <a
+    href={pdf}
+    download
+    className="block"
+    aria-label="Download Khalid Errytouny's Resume"
+  >
+   Download Resume
+  </a>
+</motion.div>
+
       </div>
+
+      
+
+
     </motion.div>
   );
 }
