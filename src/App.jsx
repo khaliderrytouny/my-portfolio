@@ -1,6 +1,7 @@
 import { About } from "./Componants/About";
 import Contact from "./Componants/Contact";
 import Hero from "./Componants/Hero";
+import Mycv from "./Componants/Mycv";
 import Navbar from "./Componants/Navbar";
 import Projects from "./Componants/Projects";
 import Technologies from "./Componants/Technologies";
@@ -18,6 +19,7 @@ export default function App() {
         <Technologies/>
         <Projects/>
         <Contact/>
+        <Mycv/>
       </div>
     </div>
   );
