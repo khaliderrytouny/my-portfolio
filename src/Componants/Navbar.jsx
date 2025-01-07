@@ -9,7 +9,7 @@ export default function Navbar() {
       </div>
       <div className="flex items-center justify-center gap-4 text-xl md:text-2xl">
         <motion.a 
-          href="https://www.linkedin.com/in/khalid-er-rytouny-59a358299?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
+          href="https://www.linkedin.com/in/khaliderrytouny/" 
           target="_blank" 
           rel="noopener noreferrer"
           whileHover={{ scale: 1.1 }}
@@ -17,7 +17,7 @@ export default function Navbar() {
           <FaLinkedin className="hover:text-blue-500 transition-colors duration-300" />
         </motion.a>
         <motion.a 
-          href="https://github.com/khoulyou90" 
+          href="https://github.com/khaliderrytouny" 
           target="_blank" 
           rel="noopener noreferrer"
           whileHover={{ scale: 1.1 }}
