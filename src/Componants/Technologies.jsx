@@ -15,7 +15,7 @@ const iconVariants = {
     },
   },
   float: {
-    y: [0, -10, 0], // Floating effect
+    y: [0, -10, 0], // Effet de flottement
     transition: {
       duration: 2,
       ease: "easeInOut",

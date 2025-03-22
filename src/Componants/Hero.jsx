@@ -43,18 +43,13 @@ export default function Hero() {
             className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-2xl tracking-tight text-transparent"
             variants={itemVariants}
           >
-            FULL STACK DEVELOPER
+            DÉVELOPPEUR FULL STACK
           </motion.span>
           <motion.p
             className="mt-2 max-w-xl py-6 font-light tracking-tighter"
             variants={itemVariants}
           >
-            I am a skilled full stack software developer with two years of hands-on experience and
-            a digital development certificate obtained this year. I have worked with a variety of
-            companies, gaining expertise in a range of technologies including React.js, Node.js,
-            Laravel, MongoDB, MySQL, Bootstrap, and Tailwind. My focus is on crafting robust and
-            scalable web applications. I am passionate about using my skills to create innovative
-            solutions that enhance business growth and deliver exceptional user experiences.
+            Je suis un développeur full stack compétent avec un diplôme en développement numérique obtenu l'année dernière. J'ai acquis de l'expérience en travaillant sur divers projets et en utilisant une gamme de technologies, notamment React.js, Node.js, Laravel, MongoDB, MySQL, Bootstrap et Tailwind. Mon objectif est de créer des applications web robustes et évolutives. Passionné par le développement, je cherche à concevoir des solutions innovantes qui favorisent la croissance des entreprises et offrent des expériences utilisateur exceptionnelles.
           </motion.p>
         </motion.div>
         <motion.div

@@ -34,7 +34,7 @@ const Contact = () => {
         className="my-10 text-center text-4xl"
         variants={itemVariants}
       >
-        Get in Touch
+        Contactez-moi
       </motion.h2>
       <motion.div
         className="text-center tracking-tighter"

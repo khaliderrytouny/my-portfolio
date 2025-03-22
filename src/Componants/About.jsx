@@ -8,13 +8,13 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.4, // Increased delay for a more pronounced stagger effect
+      staggerChildren: 0.4,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, x: -50, scale: 0.9 }, // Added scale for more dynamic effect
+  hidden: { opacity: 0, x: -50, scale: 0.9 },
   visible: {
     opacity: 1,
     x: 0,
@@ -70,9 +70,9 @@ export const About = () => {
     >
       <motion.h2
         className="my-20 text-center text-4xl"
-        variants={textVariants} // Added animation for the heading
+        variants={textVariants}
       >
-        About <span className="text-neutral-500">Me</span>
+        À propos <span className="text-neutral-500">de moi</span>
       </motion.h2>
       <div className="flex flex-wrap">
         <motion.div className="w-full lg:w-1/2 lg:p-8" variants={itemVariants}>
@@ -80,7 +80,7 @@ export const About = () => {
             <motion.img
               className="w-48 h-48 lg:w-64 lg:h-64 rounded-2xl"
               src={about}
-              alt="about"
+              alt="À propos"
               variants={imageVariants}
             />
           </div>
@@ -88,7 +88,8 @@ export const About = () => {
         <motion.div className="w-full lg:w-1/2" variants={itemVariants}>
           <div className="flex justify-center lg:justify-start">
             <motion.p className="mt-2 max-w-xl py-6 font-light tracking-tighter" variants={textVariants}>
-I am a dedicated and versatile full stack developer with a passion for creating efficient and user-friendly web applications. With 2 years of professional experience, I have worked with a variety of technologies, including React, Next.js, Node.js, MySQL, PostgreSQL, and MongoDB. My journey in web development began with a deep curiosity about how things work, evolving into a career where I continuously strive to learn and adapt to new challenges. I thrive in collaborative environments and enjoy solving complex problems to deliver high-quality solutions. Outside of coding, I stay active, explore new technologies, and contribute to open-source projects.
+Je suis un développeur full stack passionné et polyvalent, dédié à la création d'applications web efficaces et conviviales. Diplômé l'année dernière, j'ai acquis de l'expérience en travaillant avec diverses technologies, notamment React, 
+Express.js, MySQL, MongoDB et Laravel. Mon parcours dans le développement web a commencé par une profonde curiosité sur le fonctionnement des choses, évoluant vers une carrière où je cherche continuellement à apprendre et à m'adapter aux nouveaux défis. J'aime travailler dans des environnements collaboratifs et résoudre des problèmes complexes pour fournir des solutions de haute qualité. En dehors du codage, je reste actif, j'explore de nouvelles technologies et je contribue à des projets open-source.
             </motion.p>
           </div>
         </motion.div>
