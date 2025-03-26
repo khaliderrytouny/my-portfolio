@@ -1,14 +1,16 @@
 import { PROJECTS } from '../constants';
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'; 
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination, Autoplay } from 'swiper/modules';
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.3,
-    },
+    transition: { staggerChildren: 0.3 },
   },
 };
 
@@ -18,24 +20,6 @@ const itemVariants = {
     opacity: 1,
     y: 0,
     transition: { duration: 0.5, ease: 'easeOut' },
-  },
-};
-
-const imageVariants = {
-  hidden: { opacity: 0, scale: 0.9 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.6, ease: 'easeOut' },
-  },
-};
-
-const textVariants = {
-  hidden: { opacity: 0, x: -10 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.4, ease: 'easeOut' },
   },
 };
 
@@ -56,44 +40,54 @@ const Projects = () => {
       >
         Projects
       </motion.h2>
-      <div>
+      <Swiper
+        modules={[Pagination, Autoplay]}
+        spaceBetween={30}
+        slidesPerView={1}
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 3000 }}
+        breakpoints={{
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }}
+        className="w-full"
+      >
         {PROJECTS.map((project, i) => (
-          <motion.div
-            key={i}
-            className="mb-8 flex flex-wrap lg:justify-center"
-            variants={itemVariants}
-          >
+          <SwiperSlide key={i} className="flex">
             <motion.div
-              className="w-full lg:w-1/4"
-              variants={imageVariants}
+              className="p-6 bg-neutral-900 rounded-lg flex flex-col justify-between"
+              variants={itemVariants}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%',
+                width: '100%',
+                minHeight: '350px',
+              }}
             >
-              <img
-                src={project.image}
-                width={250}
-                height={250}
-                alt={project.title}
-                className="mb-6 rounded"
-              />
-            </motion.div>
-            <motion.div className="w-full max-w-xl lg:w-3/4" variants={textVariants}>
-              <motion.h6 className="mb-2 font-semibold" variants={textVariants}>
-                {project.title}
-              </motion.h6>
-              <motion.p className="mb-4 text-neutral-400" variants={textVariants}>
+              <h6 className="mb-2 font-semibold">{project.title}</h6>
+              <div
+                className="mb-4 text-neutral-400"
+                style={{
+                  flex: 1, // هذا يضمن أن الوصف يملأ المساحة المتاحة بالتساوي
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between', // لتوزيع المحتوى بشكل متساوٍ داخل الوصف
+                }}
+              >
                 {project.description}
-              </motion.p>
-              <motion.div className="flex flex-wrap">
+              </div>
+              <div className="flex flex-wrap mb-4">
                 {project.technologies.map((t, i) => (
-                  <motion.span
+                  <span
                     key={i}
-                    className="mr-2 mt-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-violet-500"
-                    variants={textVariants}
+                    className="mr-2 mt-2 rounded bg-neutral-800 px-2 py-1 text-sm text-violet-500"
                   >
                     {t}
-                  </motion.span>
+                  </span>
                 ))}
-              </motion.div>
-              <motion.div className="mt-4 flex space-x-4" variants={textVariants}>
+              </div>
+              <div className="mt-4 flex space-x-4">
                 {project.links?.github && (
                   <a
                     href={project.links.github}
@@ -114,11 +108,11 @@ const Projects = () => {
                     <FaExternalLinkAlt size={20} />
                   </a>
                 )}
-              </motion.div>
+              </div>
             </motion.div>
-          </motion.div>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </motion.div>
   );
 };
